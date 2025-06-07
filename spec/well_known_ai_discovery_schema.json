@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Discovery Schema",
+  "description": "Defines the structure for AI discovery data",
+  "version": "1.0.0",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "The version of the schema"
+    },
+    "description": {
+      "type": "string",
+      "description": "A description of the AI discovery data"
+    },
+    "mcpServices": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/mcpService"
+      }
+    },
+    "a2aServices": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/a2aService"
+      }
+    }
+  },
+  "$defs": {
+    "mcpService": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the mcp service"
+        },
+        "url": {
+          "type": "string",
+          "description": "The url of the mcp service"
+        },
+        "description": {
+          "type": "string",
+          "description": "A description of the mcp service"
+        },
+        "tools": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "A tool provided by the mcp service"
+          }
+        }
+      },
+      "required": ["name", "url"],
+      "additionalProperties": false
+    },
+    "a2aService": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the a2a service"
+        },
+        "url": {
+          "type": "string",
+          "description": "The url of the mcp service"
+        },
+        "card": {
+          "type": "string",
+          "description": "The service endpoint url of A2A service's /.well-known/agent.json file."
+        },
+        "description": {
+          "type": "string",
+          "description": "A description of the A2A service"
+        }
+      },
+      "required": ["name", "url", "card"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["version"],
+  "additionalProperties": false
+}
