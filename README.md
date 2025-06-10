@@ -1,5 +1,8 @@
-# AI Discovery Meta Specification
+<h1 align="center">AI Discovery Meta Specification</h1>
 
+<p align="center">
+  <img src="public/ai_discovery_logo_w.png" alt="AI Discovery Logo" width="600">
+</p>
 A standardized approach for websites to declare AI Agent-compatible content and services through HTML meta tags and structured discovery endpoints.
 
 ## Overview
